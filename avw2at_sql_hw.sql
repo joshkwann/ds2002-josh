@@ -17,7 +17,7 @@ SELECT * FROM `city` WHERE CountryCode="JPN";
 SELECT * FROM `country` WHERE Region="Western Africa" LIMIT 3;
 
 /* Retrieve the country and its life expectancy where the population is between 1 and 5 million. */
-SELECT country.Name, country.LifeExpectancy FROM country JOIN city ON country.Code = city.CountryCode WHERE city.Population BETWEEN 1000000 AND 5000000;
+SELECT Name, LifeExpectancy FROM country WHERE Population BETWEEN 1000000 AND 5000000;
 
 /* List countries with an official language of 'French'. */
 SELECT country.Name FROM country JOIN countrylanguage ON country.Code = countrylanguage.CountryCode WHERE countrylanguage.Language = 'French' AND countrylanguage.IsOfficial = 'T';
@@ -37,7 +37,7 @@ SELECT * FROM `Playlist`
 SELECT Track.Name FROM Track JOIN Genre ON Track.GenreId = Genre.GenreId WHERE Genre.Name = "Rock";
 
 /* List all employees who report to 'Nancy Edwards' */
-SELECT * FROM `Employee` WHERE ReportsTo=1;
+SELECT * FROM `Employee` WHERE ReportsTo=2;
 
 /* Calculate the total sales per customer by summing the total amount in invoices. */
 SELECT CustomerId, SUM(Total) AS Total FROM Invoice GROUP BY CustomerId;
